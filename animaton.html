@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animaton</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            width: 100%;
+            height: 500px;
+            position: relative;
+        }
+
+        .box{
+            border-radius: 50%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: ani_move 0.1s infinite alternate;
+        }
+
+        .mini_box_1{
+            width: 100px;
+            height: 100px;
+            background-color: lightcyan;
+            animation-duration: 1s;
+        }
+        .mini_box_2{
+            width: 10px;
+            height: 10px;
+            background-color: gold;
+            animation-duration: 0.7s;
+            
+        }
+        .mini_box_3{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            animation-duration: 3s;         
+        }
+        .mini_box_4{
+            width: 50px;
+            height: 50px;
+            animation-duration: 0.9s;
+        }
+        
+        .on{
+            display: none;
+        }
+
+
+        /* .box_2{
+            width: 100%;
+            height: 50%;
+            background-color: bisque;
+        } */
+
+        @keyframes ani_move {
+            100%{
+                left:100% 
+        }
+    }
+
+
+    </style>
+
+
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="box mini_box_1">1</div>
+        <div class="box mini_box_2">2</div>
+        <div class="box mini_box_3">3</div>
+        <div class="box mini_box_4">4</div>
+        <!-- <div class="box_2"></div> -->
+    </div>
+
+    <script>
+        (function(){
+            const wrapEl = document.querySelector('.wrap')
+            
+            const handleclick = (e) => {
+                if(e.target.classList.contains('box')){
+                    e.target.classList.add('on')
+                }
+            }
+
+            wrapEl.addEventListener('click', handleclick)
+        })()
+
+
+
+    </script>
+
+
+</body>
+</html>
